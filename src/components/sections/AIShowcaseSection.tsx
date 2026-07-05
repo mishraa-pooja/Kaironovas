@@ -8,39 +8,39 @@ import { Brain, Sparkles, Zap, Target, TrendingUp } from 'lucide-react'
 
 const aiDemos = [
   {
-    title: 'Website Generator',
-    description: 'Tell our AI your business type and get instant website suggestions',
+    title: 'Private Knowledge Assistant',
+    description: 'A RAG assistant that answers from your internal documents with citations',
     icon: Brain,
-    placeholder: 'e.g., Modern bakery in San Francisco',
+    placeholder: 'e.g., What is our refund policy for enterprise clients?',
     demoResults: [
-      '🎨 Warm, artisanal design with earth tones',
-      '📱 Mobile-first bakery showcase layout',
-      '🛒 Integrated online ordering system',
-      '📍 Location-based SEO optimization'
+      '📄 Answer grounded in your internal policy documents',
+      '🔗 Cites source: Enterprise_Policy_v3.pdf, section 4.2',
+      '🔒 Runs privately — no data sent to external APIs',
+      '⚡ Sub-second retrieval across thousands of documents'
     ]
   },
   {
-    title: 'Influencer Matcher',
-    description: 'AI analyzes millions of profiles to find perfect brand matches',
+    title: 'Support Automation',
+    description: 'Automate repetitive support queries using your SOPs and knowledge base',
     icon: Target,
-    placeholder: 'e.g., Fitness brand targeting millennials',
+    placeholder: 'e.g., Customer asking why their payment failed',
     demoResults: [
-      '👥 85% engagement rate fitness influencers',
-      '📊 Authentic audience analysis: 92% real followers',
-      '💰 Predicted ROI: 340% based on similar campaigns',
-      '🎯 Perfect demographic match: 89% score'
+      '🤖 Drafts a response from your support knowledge base',
+      '🔗 References: Billing_Troubleshooting_SOP.md',
+      '👤 Human-in-the-loop review before sending',
+      '📉 Reduces handle time on repetitive tickets'
     ]
   },
   {
-    title: 'Marketing Optimizer',
-    description: 'Predictive analytics for campaign performance before launch',
+    title: 'Document Intelligence',
+    description: 'Extract and summarize key information from long internal documents',
     icon: TrendingUp,
-    placeholder: 'e.g., Summer product launch campaign',
+    placeholder: 'e.g., Summarize this 40-page vendor contract',
     demoResults: [
-      '📈 Predicted CTR: 4.2% (Industry avg: 2.1%)',
-      '💸 Optimal budget allocation: 60% social, 40% search',
-      '📅 Best launch timing: July 15th, 2:30 PM EST',
-      '🎯 Target audience: 78% likelihood to convert'
+      '📝 Concise summary of key terms and obligations',
+      '⚠️ Flags renewal dates, penalties, and liabilities',
+      '🔗 Links each point back to the source page',
+      '🔒 Processed entirely within your environment'
     ]
   }
 ]
@@ -80,20 +80,20 @@ export function AIShowcaseSection() {
         >
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-full px-4 py-2 mb-6 border border-indigo-500/30">
             <Sparkles className="h-4 w-4 text-indigo-400" />
-            <span className="text-sm font-medium text-indigo-300">Experience AI in Action</span>
+            <span className="text-sm font-medium text-indigo-300">See Private AI in Action</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Try Our AI
+              Private AI
             </span>
             <br />
-            <span className="text-white">Live Demos</span>
+            <span className="text-white">Assistants</span>
           </h2>
           
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            See how our AI technology works in real-time. These are actual algorithms 
-            powering our production services.
+            Examples of AI grounded in your own data — deployed privately, with
+            citations and full control. Live demonstrations available on request.
           </p>
         </motion.div>
 
@@ -165,7 +165,7 @@ export function AIShowcaseSection() {
                 {/* Input */}
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
-                    Describe your project:
+                    Ask a question:
                   </label>
                   <input
                     type="text"
@@ -187,12 +187,12 @@ export function AIShowcaseSection() {
                   {isAnalyzing ? (
                     <>
                       <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
-                      AI Analyzing...
+                      Processing...
                     </>
                   ) : (
                     <>
                       <Zap className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                      Analyze with AI
+                      Run Query
                     </>
                   )}
                 </Button>
@@ -207,7 +207,7 @@ export function AIShowcaseSection() {
                   >
                     <h4 className="text-lg font-semibold text-white flex items-center">
                       <Sparkles className="h-5 w-5 mr-2 text-indigo-400" />
-                      AI Analysis Results
+                      AI Response
                     </h4>
                     <div className="bg-gradient-to-r from-indigo-500/10 to-purple-500/10 rounded-lg p-4 border border-indigo-500/20">
                       {currentDemo.demoResults.map((result, index) => (
@@ -224,7 +224,7 @@ export function AIShowcaseSection() {
                       ))}
                     </div>
                     <p className="text-xs text-gray-400 italic">
-                      * This is a demo showing AI capabilities. Real results may vary.
+                      * Illustrative example. Live demonstrations available on request.
                     </p>
                   </motion.div>
                 )}

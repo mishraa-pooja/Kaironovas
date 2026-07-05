@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { 
-  Globe, 
   Settings, 
   TrendingUp, 
   Users, 
@@ -18,88 +17,88 @@ import {
 
 const services = [
   {
-    title: 'AI Website Creation',
-    description: 'Smart websites that adapt and optimize themselves using machine learning algorithms.',
+    title: 'Private LLM Deployment',
+    description: 'Self-hosted open-source LLMs running securely inside your own infrastructure.',
     features: [
-      'AI-powered design generation',
-      'Automated content optimization',
-      'Smart SEO implementation',
-      'Real-time performance tuning'
+      'On-prem, VPC or private cloud',
+      'Open-source models (Llama, Mistral, Qwen)',
+      'No data sent to third-party APIs',
+      'Access-controlled model serving'
     ],
-    icon: Globe,
+    icon: Brain,
     gradient: 'from-blue-500 to-indigo-600',
-    priceRange: '$3,000 - $15,000',
-    aiCapabilities: 'GPT-4 powered content generation + Claude optimization'
+    priceRange: 'Deployed in your environment',
+    aiCapabilities: 'vLLM / Ollama serving with GPU acceleration'
   },
   {
-    title: 'Website Updates & Maintenance',
-    description: 'AI-driven maintenance that prevents issues before they happen.',
+    title: 'RAG on Company Data',
+    description: 'Answer questions from your documents, SOPs, and internal systems with source citations.',
     features: [
-      'Predictive bug detection',
-      'Automated security updates',
-      'Performance optimization',
-      'Content freshness monitoring'
-    ],
-    icon: Settings,
-    gradient: 'from-green-500 to-teal-600',
-    priceRange: '$500 - $3,000',
-    aiCapabilities: 'Machine learning for predictive maintenance'
-  },
-  {
-    title: 'AI Digital Marketing',
-    description: 'Intelligent marketing campaigns that learn and improve automatically.',
-    features: [
-      'Predictive audience targeting',
-      'Automated A/B testing',
-      'Smart content creation',
-      'ROI optimization algorithms'
-    ],
-    icon: TrendingUp,
-    gradient: 'from-purple-500 to-pink-600',
-    priceRange: '$2,000 - $10,000/month',
-    aiCapabilities: 'Advanced ML models for customer behavior prediction'
-  },
-  {
-    title: 'Smart Influencer Matching',
-    description: 'AI platform that finds perfect influencers and predicts campaign success.',
-    features: [
-      'AI influencer scoring',
-      'Engagement authenticity analysis',
-      'Campaign ROI prediction',
-      'Automated partnership matching'
-    ],
-    icon: Users,
-    gradient: 'from-orange-500 to-red-600',
-    priceRange: '$5,000 - $25,000/campaign',
-    aiCapabilities: 'Custom neural networks for influencer analysis'
-  },
-  {
-    title: 'AI Sports Analytics',
-    description: 'Advanced computer vision and predictive analytics for sports performance.',
-    features: [
-      'Video analysis & tracking',
-      'Performance prediction models',
-      'Injury prevention algorithms',
-      'Strategy optimization'
+      'Document ingestion & chunking',
+      'Vector database integration',
+      'Grounded, cited responses',
+      'Connects to internal knowledge sources'
     ],
     icon: BarChart3,
-    gradient: 'from-cyan-500 to-blue-600',
-    priceRange: '$10,000 - $50,000/season',
-    aiCapabilities: 'Computer vision + predictive modeling'
+    gradient: 'from-green-500 to-teal-600',
+    priceRange: 'Grounded in your data',
+    aiCapabilities: 'Retrieval-augmented generation over private data'
   },
   {
-    title: 'Smart Home Automation',
-    description: 'AI-powered home systems that learn and adapt to your lifestyle.',
+    title: 'GPU Cluster Deployment',
+    description: 'Provision and operate GPU infrastructure for inference and fine-tuning at scale.',
     features: [
-      'Behavioral pattern learning',
-      'Energy optimization',
-      'Predictive maintenance',
-      'Security intelligence'
+      'GPU scheduling & autoscaling',
+      'Cost-optimized utilization',
+      'Multi-node inference',
+      'On-prem or cloud GPUs'
     ],
     icon: Zap,
+    gradient: 'from-purple-500 to-pink-600',
+    priceRange: 'Scales with your workload',
+    aiCapabilities: 'Kubernetes-based GPU orchestration'
+  },
+  {
+    title: 'GitOps & CI/CD',
+    description: 'Versioned, automated deployment pipelines for AI models and infrastructure.',
+    features: [
+      'Infrastructure as code (Terraform)',
+      'Declarative GitOps workflows',
+      'Automated model rollout & rollback',
+      'Reproducible environments'
+    ],
+    icon: Settings,
+    gradient: 'from-orange-500 to-red-600',
+    priceRange: 'Fully automated delivery',
+    aiCapabilities: 'GitOps pipelines for AI workloads'
+  },
+  {
+    title: 'Observability & Monitoring',
+    description: 'Full visibility into AI systems — performance, cost, usage, and reliability.',
+    features: [
+      'Latency & throughput metrics',
+      'Token & GPU cost tracking',
+      'Logging and tracing',
+      'Alerting on anomalies'
+    ],
+    icon: TrendingUp,
+    gradient: 'from-cyan-500 to-blue-600',
+    priceRange: 'Production-grade monitoring',
+    aiCapabilities: 'End-to-end AI observability stack'
+  },
+  {
+    title: 'Enterprise Workflow Automation',
+    description: 'Automate repetitive operations with AI agents connected to your business systems.',
+    features: [
+      'Support & back-office automation',
+      'Integration with internal APIs',
+      'Human-in-the-loop controls',
+      'Secure, auditable actions'
+    ],
+    icon: Users,
     gradient: 'from-yellow-500 to-orange-600',
-    priceRange: '$5,000 - $30,000',
-    aiCapabilities: 'IoT integration with machine learning'
+    priceRange: 'Less manual work',
+    aiCapabilities: 'AI agents grounded in your data and tools'
   }
 ]
 
@@ -117,20 +116,20 @@ export function ServicesSection() {
         >
           <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full px-4 py-2 mb-6">
             <Brain className="h-4 w-4 text-indigo-600" />
-            <span className="text-sm font-medium text-indigo-800">AI-Powered Services</span>
+            <span className="text-sm font-medium text-indigo-800">What We Build</span>
           </div>
           
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Intelligent Solutions
+              Private AI Systems
             </span>
             <br />
-            <span className="text-gray-900">For Every Need</span>
+            <span className="text-gray-900">Built on Your Infrastructure</span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our AI-powered services don't just solve problems—they anticipate them. 
-            Experience the future of digital solutions today.
+            Secure private LLMs, RAG on your data, GPU infrastructure, and
+            automation — deployed and operated entirely inside your environment.
           </p>
         </motion.div>
 
@@ -187,7 +186,7 @@ export function ServicesSection() {
                     {/* Pricing */}
                     <div className="flex items-center justify-between pt-4 border-t">
                       <div>
-                        <span className="text-xs text-gray-500">Starting from</span>
+                        <span className="text-xs text-gray-500">Outcome</span>
                         <div className="font-semibold text-gray-900">{service.priceRange}</div>
                       </div>
                       <Button variant="ghost" size="sm" className="group/btn">
@@ -211,7 +210,7 @@ export function ServicesSection() {
           className="text-center mt-16"
         >
           <Button size="xl" variant="gradient" className="group">
-            Explore All AI Solutions
+            Discuss Your Private AI Deployment
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </motion.div>

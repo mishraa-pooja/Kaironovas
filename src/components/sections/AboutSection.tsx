@@ -3,35 +3,35 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
-import { Brain, Target, Lightbulb, Shield, Users, Award } from 'lucide-react'
+import { Brain, Target, Shield, Users, Award } from 'lucide-react'
 
 const stats = [
-  { number: '500+', label: 'AI Models Deployed', icon: Brain },
-  { number: '98%', label: 'Client Satisfaction', icon: Award },
-  { number: '10M+', label: 'Data Points Processed', icon: Target },
-  { number: '24/7', label: 'AI Monitoring', icon: Shield }
+  { number: 'Private', label: 'LLMs on your infrastructure', icon: Brain },
+  { number: 'RAG', label: 'Grounded in your data', icon: Target },
+  { number: 'GitOps', label: 'Automated deployments', icon: Shield },
+  { number: 'Secure', label: 'Data stays in your environment', icon: Award }
 ]
 
 const values = [
   {
-    icon: Brain,
-    title: 'AI-First Approach',
-    description: 'We believe AI should enhance human creativity, not replace it. Every solution we build leverages machine learning to deliver smarter outcomes.'
+    icon: Shield,
+    title: 'Security & Privacy First',
+    description: 'Your data never leaves your environment. We deploy AI on-premise, in your VPC, or private cloud — with access controls and full auditability.'
   },
   {
     icon: Target,
-    title: 'Results-Driven',
-    description: 'Our AI systems are designed with one goal: measurable business impact. We track, optimize, and continuously improve performance.'
+    title: 'Production-Grade Engineering',
+    description: 'We build AI systems that run reliably in production — monitored, observable, and cost-optimized — not demos that break under real load.'
   },
   {
-    icon: Lightbulb,
-    title: 'Innovation Focus',
-    description: 'We stay at the forefront of AI technology, constantly exploring new models, algorithms, and applications to benefit our clients.'
+    icon: Brain,
+    title: 'Infrastructure Expertise',
+    description: 'Deep hands-on experience with Kubernetes, GPU infrastructure, GitOps, CI/CD, and DevOps automation applied to real AI workloads.'
   },
   {
     icon: Users,
-    title: 'Human-Centered Design',
-    description: 'Technology serves people. Our AI solutions are intuitive, accessible, and designed to augment human capabilities.'
+    title: 'Outcome-Focused',
+    description: 'We measure success in business outcomes: faster support, better knowledge access, and less manual work across your teams.'
   }
 ]
 
@@ -54,8 +54,8 @@ export function AboutSection() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We're pioneering the future of intelligent digital solutions. Our mission is to democratize 
-            AI technology and make it accessible for businesses of all sizes.
+            We help enterprises adopt AI without giving up control of their data —
+            deploying private, secure AI systems inside their own infrastructure.
           </p>
         </motion.div>
 
@@ -68,21 +68,22 @@ export function AboutSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Story</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Approach</h3>
             <div className="space-y-4 text-gray-600">
               <p>
-                Founded in 2023, Kaironovas emerged from a simple observation: while AI technology 
-                was advancing rapidly, most businesses couldn't access or implement these powerful 
-                tools effectively.
+                Public AI tools are powerful, but sending sensitive data to third-party
+                APIs isn't an option for banks, healthcare, insurance, and other
+                regulated organizations.
               </p>
               <p>
-                We set out to bridge this gap by creating AI-powered solutions that are not just 
-                cutting-edge, but also practical, reliable, and tailored to real business needs.
+                Kaironovas closes that gap. We deploy private LLMs and RAG on your own
+                data, provision GPU infrastructure, and automate delivery with GitOps,
+                CI/CD, and observability — all inside your environment.
               </p>
               <p>
-                Today, we're proud to be at the forefront of AI innovation, helping businesses 
-                transform their operations through intelligent automation, predictive analytics, 
-                and smart decision-making systems.
+                Built by engineers with hands-on experience in infrastructure
+                automation, DevOps, Kubernetes, and AI deployment, we focus on systems
+                that run reliably and securely in production.
               </p>
             </div>
           </motion.div>
@@ -119,7 +120,7 @@ export function AboutSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Our Core Values</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">How We Work</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {values.map((value, index) => {
               const IconComponent = value.icon

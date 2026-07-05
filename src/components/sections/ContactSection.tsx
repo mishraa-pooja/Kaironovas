@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Mail, Phone, MapPin, Send, MessageSquare, Calendar } from 'lucide-react'
+import { Mail, Cloud, ShieldCheck, Send, MessageSquare, Calendar } from 'lucide-react'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -60,16 +60,16 @@ export function ContactSection() {
       description: 'Send us an email anytime'
     },
     {
-      icon: Phone,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri 9AM-6PM EST'
+      icon: Cloud,
+      title: 'Deploy Anywhere',
+      details: 'On-prem · VPC · Cloud',
+      description: 'We deploy inside your environment'
     },
     {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: 'San Francisco, CA',
-      description: 'Schedule a meeting'
+      icon: ShieldCheck,
+      title: 'Your Data Stays Yours',
+      details: 'Private by design',
+      description: 'No data sent to third-party APIs'
     }
   ]
 
@@ -85,15 +85,15 @@ export function ContactSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gray-900">Let's Build Something</span>
+            <span className="text-gray-900">Discuss Your</span>
             <br />
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Amazing Together
+              Private AI Deployment
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your business with AI? Get in touch with our team of experts 
-            and let's discuss how we can help you achieve your goals.
+            Tell us about your data, use case, and infrastructure. We'll show you how
+            private AI can run securely inside your environment.
           </p>
         </motion.div>
 
@@ -110,7 +110,7 @@ export function ContactSection() {
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Get In Touch</h3>
                 <p className="text-gray-600 mb-8">
-                  Choose the best way to reach us. We're here to help you succeed.
+                  Reach out to discuss a secure, private AI deployment for your team.
                 </p>
               </div>
 
@@ -138,13 +138,13 @@ export function ContactSection() {
                 <CardContent className="p-0">
                   <div className="flex items-center space-x-3 mb-3">
                     <Calendar className="h-5 w-5 text-indigo-600" />
-                    <h4 className="font-semibold text-gray-900">Schedule a Call</h4>
+                    <h4 className="font-semibold text-gray-900">Book a Demo</h4>
                   </div>
                   <p className="text-gray-600 text-sm mb-4">
-                    Book a free 30-minute consultation to discuss your project.
+                    See a private AI assistant running on sample data in a short demo.
                   </p>
                   <Button variant="outline" size="sm" className="w-full">
-                    Book a Call
+                    Book a Demo
                   </Button>
                 </CardContent>
               </Card>
@@ -215,7 +215,7 @@ export function ContactSection() {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Service Interest
+                        Area of Interest
                       </label>
                       <select
                         name="service"
@@ -223,13 +223,14 @@ export function ContactSection() {
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
                       >
-                        <option value="">Select a service</option>
-                        <option value="ai-website">AI Website Creation</option>
-                        <option value="digital-marketing">AI Digital Marketing</option>
-                        <option value="influencer-marketing">Smart Influencer Matching</option>
-                        <option value="sports-analytics">AI Sports Analytics</option>
-                        <option value="home-automation">Smart Home Automation</option>
-                        <option value="custom">Custom AI Solution</option>
+                        <option value="">Select an area</option>
+                        <option value="private-llm">Private LLM Deployment</option>
+                        <option value="rag">RAG on Company Data</option>
+                        <option value="gpu">GPU Cluster Deployment</option>
+                        <option value="gitops">GitOps & CI/CD</option>
+                        <option value="observability">Observability & Monitoring</option>
+                        <option value="automation">Workflow Automation</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
                   </div>
@@ -245,7 +246,7 @@ export function ContactSection() {
                       value={formData.message}
                       onChange={handleChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors resize-none"
-                      placeholder="Tell us about your project, goals, and how we can help..."
+                      placeholder="Tell us about your data, use case, and infrastructure..."
                     />
                   </div>
 
@@ -256,7 +257,7 @@ export function ContactSection() {
                     disabled={isSubmitting}
                     className="w-full group"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                    {isSubmitting ? 'Sending...' : 'Request a Demo'}
                     {!isSubmitting && (
                       <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                     )}

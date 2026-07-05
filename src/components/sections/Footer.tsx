@@ -2,21 +2,21 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Twitter, Linkedin, Github } from 'lucide-react'
+import { Mail, Cloud, ShieldCheck, Twitter, Linkedin, Github } from 'lucide-react'
 import { Logo } from '@/components/ui/logo'
 
 export function Footer() {
   const services = [
-    { name: 'AI Website Creation', href: '#' },
-    { name: 'Digital Marketing', href: '#' },
-    { name: 'Influencer Matching', href: '#' },
-    { name: 'Sports Analytics', href: '#' },
-    { name: 'Home Automation', href: '#' }
+    { name: 'Private LLM Deployment', href: '#services' },
+    { name: 'RAG on Company Data', href: '#services' },
+    { name: 'GPU Cluster Deployment', href: '#services' },
+    { name: 'GitOps & CI/CD', href: '#services' },
+    { name: 'Observability', href: '#services' }
   ]
 
   const company = [
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
+    { name: 'What We Build', href: '#services' },
     { name: 'Contact', href: '#contact' },
     { name: 'Privacy Policy', href: '#' },
     { name: 'Terms of Service', href: '#' }
@@ -38,7 +38,7 @@ export function Footer() {
               <Logo variant="white" size="md" showText={true} />
             </Link>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Pioneering the future of intelligent digital solutions with cutting-edge AI technology.
+              Private AI infrastructure and automation — secure private LLMs, RAG, and workflow automation deployed inside your own environment.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
@@ -105,19 +105,17 @@ export function Footer() {
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <Phone className="h-5 w-5 text-indigo-400 mt-0.5" />
+                <Cloud className="h-5 w-5 text-indigo-400 mt-0.5" />
                 <div>
-                  <p className="text-gray-400">Phone</p>
-                  <a href="tel:+15551234567" className="text-white hover:text-indigo-400 transition-colors">
-                    +1 (555) 123-4567
-                  </a>
+                  <p className="text-gray-400">Deployment</p>
+                  <p className="text-white">On-prem · VPC · Cloud</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-indigo-400 mt-0.5" />
+                <ShieldCheck className="h-5 w-5 text-indigo-400 mt-0.5" />
                 <div>
-                  <p className="text-gray-400">Location</p>
-                  <p className="text-white">San Francisco, CA</p>
+                  <p className="text-gray-400">Data</p>
+                  <p className="text-white">Private by design</p>
                 </div>
               </div>
             </div>
@@ -128,13 +126,13 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Kaironovas. All rights reserved.
+              © {new Date().getFullYear()} Kaironovas. All rights reserved.
             </p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <span className="text-sm text-gray-400">Powered by AI</span>
+              <span className="text-sm text-gray-400">Private AI Infrastructure</span>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-sm text-gray-400">All systems operational</span>
+                <span className="text-sm text-gray-400">Deployed in your environment</span>
               </div>
             </div>
           </div>

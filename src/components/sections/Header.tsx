@@ -11,9 +11,9 @@ export function Header() {
 
   const navigation = [
     { name: 'Home', href: '/' },
+    { name: 'What We Build', href: '#services' },
     { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'AI Solutions', href: '#ai-solutions' },
+    { name: 'Demos', href: '#ai-solutions' },
     { name: 'Contact', href: '#contact' },
   ]
 
@@ -41,7 +41,7 @@ export function Header() {
               </Link>
             ))}
             <Button variant="gradient" size="lg" asChild>
-              <Link href="#contact">Get Started</Link>
+              <Link href="#contact">Book a Demo</Link>
             </Button>
           </div>
 
@@ -77,7 +77,7 @@ export function Header() {
               ))}
               <Button variant="gradient" size="lg" asChild className="self-start">
                 <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
-                  Get Started
+                  Book a Demo
                 </Link>
               </Button>
             </div>

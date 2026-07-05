@@ -3,56 +3,44 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
-import { Star, Quote } from 'lucide-react'
+import { Quote } from 'lucide-react'
 
-const testimonials = [
+const useCases = [
   {
-    name: 'Sarah Chen',
-    role: 'CEO, TechStartup Inc.',
-    company: 'TechStartup Inc.',
-    content: 'Kaironovas transformed our digital presence with their AI-powered website. Our conversion rate increased by 300% in just 3 months.',
-    rating: 5,
-    avatar: '👩‍💼'
+    title: 'Internal Knowledge Assistant',
+    category: 'Knowledge Access',
+    content: 'Employees get instant, cited answers from company documents, wikis, and SOPs — without hunting through folders.',
+    avatar: '🧠'
   },
   {
-    name: 'Marcus Rodriguez',
-    role: 'Marketing Director',
-    company: 'GrowthCo',
-    content: 'Their AI influencer matching platform helped us find perfect brand ambassadors. The ROI was 400% higher than traditional methods.',
-    rating: 5,
-    avatar: '👨‍💼'
+    title: 'Support Automation',
+    category: 'Customer Support',
+    content: 'Automate repetitive support tickets with AI grounded in your knowledge base, with human review before responses go out.',
+    avatar: '🎧'
   },
   {
-    name: 'Emily Watson',
-    role: 'Founder',
-    company: 'FitLife Studios',
-    content: 'The AI sports analytics provided insights we never had before. Our athletes improved performance by 25% on average.',
-    rating: 5,
-    avatar: '👩‍🎓'
+    title: 'Document Processing',
+    category: 'Insurance & Finance',
+    content: 'Extract, summarize, and flag key terms across contracts, claims, and forms — processed entirely within your environment.',
+    avatar: '📄'
   },
   {
-    name: 'David Kim',
-    role: 'CTO',
-    company: 'SmartHomes Plus',
-    content: 'Their smart home automation AI learned our family patterns and reduced our energy costs by 40%. Simply incredible technology.',
-    rating: 5,
-    avatar: '👨‍🔧'
+    title: 'Compliance Assistant',
+    category: 'Regulated Industries',
+    content: 'Answer policy and compliance questions strictly from approved internal sources, with traceable citations.',
+    avatar: '🛡️'
   },
   {
-    name: 'Lisa Thompson',
-    role: 'Marketing Manager',
-    company: 'BrandBoost',
-    content: 'The AI-powered digital marketing campaigns consistently outperform our traditional strategies. The predictive analytics are game-changing.',
-    rating: 5,
-    avatar: '👩‍💻'
+    title: 'IT & HR Helpdesk',
+    category: 'Operations',
+    content: 'Resolve common IT and HR requests automatically, reducing manual work and routing edge cases to a human.',
+    avatar: '💬'
   },
   {
-    name: 'Alex Johnson',
-    role: 'Entrepreneur',
-    company: 'InnovateLab',
-    content: 'Working with Kaironovas was seamless. Their AI solutions integrated perfectly with our existing systems and delivered immediate results.',
-    rating: 5,
-    avatar: '👨‍🚀'
+    title: 'Engineering Knowledge Search',
+    category: 'Manufacturing & Tech',
+    content: 'Search manuals, runbooks, and maintenance logs across teams to get answers on the floor in seconds.',
+    avatar: '🔍'
   }
 ]
 
@@ -69,21 +57,21 @@ export function TestimonialsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gray-900">What Our</span>
+            <span className="text-gray-900">Where Private AI</span>
             <br />
             <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Clients Say
+              Delivers Value
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Don't just take our word for it. See how we've helped businesses transform 
-            with AI-powered solutions.
+            Common ways teams put private AI to work — grounded in their own data,
+            deployed securely inside their infrastructure.
           </p>
         </motion.div>
 
-        {/* Testimonials Grid */}
+        {/* Use Cases Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {useCases.map((useCase, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -95,26 +83,18 @@ export function TestimonialsSection() {
                 <CardContent className="p-6">
                   {/* Quote Icon */}
                   <Quote className="h-8 w-8 text-indigo-200 mb-4" />
-                  
+
                   {/* Content */}
                   <p className="text-gray-700 mb-6 leading-relaxed">
-                    "{testimonial.content}"
+                    {useCase.content}
                   </p>
-                  
-                  {/* Rating */}
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  
-                  {/* Author */}
+
+                  {/* Label */}
                   <div className="flex items-center space-x-3">
-                    <div className="text-2xl">{testimonial.avatar}</div>
+                    <div className="text-2xl">{useCase.avatar}</div>
                     <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-600">{testimonial.role}</div>
-                      <div className="text-sm text-indigo-600 font-medium">{testimonial.company}</div>
+                      <div className="font-semibold text-gray-900">{useCase.title}</div>
+                      <div className="text-sm text-indigo-600 font-medium">{useCase.category}</div>
                     </div>
                   </div>
                 </CardContent>
@@ -123,7 +103,7 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        {/* Stats */}
+        {/* Highlights */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,10 +112,10 @@ export function TestimonialsSection() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           {[
-            { number: '500+', label: 'Happy Clients' },
-            { number: '98%', label: 'Satisfaction Rate' },
-            { number: '300%', label: 'Avg. ROI Increase' },
-            { number: '24/7', label: 'AI Support' }
+            { number: 'Private', label: 'Runs in your environment' },
+            { number: 'Cited', label: 'Answers with sources' },
+            { number: 'Secure', label: 'Access-controlled' },
+            { number: '24/7', label: 'Observability' }
           ].map((stat, index) => (
             <div key={index} className="space-y-2">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">

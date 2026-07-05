@@ -9,10 +9,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kaironovas.com'),
-  title: "Kaironovas | AI-Powered Solutions & Innovation",
-  description: "Transform your business with cutting-edge AI technology. From smart websites to intelligent influencer matching, we create solutions that think ahead.",
-  keywords: "AI, artificial intelligence, website creation, digital marketing, influencer marketing, sports analytics, home automation",
-  authors: [{ name: "Kaironovas Team" }],
+  title: "Kaironovas | Private AI Infrastructure & Automation",
+  description: "Kaironovas deploys private AI on your company data — secure private LLMs, RAG, GPU clusters, GitOps, observability, and workflow automation, all inside your own environment.",
+  keywords: "Private AI, private LLM deployment, RAG on company data, enterprise AI infrastructure, GPU cluster deployment, secure AI workflows, AI workflow automation, GitOps, AI observability, on-premise AI",
+  authors: [{ name: "Kaironovas" }],
   icons: {
     icon: [
       { url: '/logo.png', sizes: '32x32', type: 'image/png' },
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: "Kaironovas | AI-Powered Solutions & Innovation",
-    description: "Transform your business with cutting-edge AI technology. From smart websites to intelligent influencer matching, we create solutions that think ahead.",
+    title: "Kaironovas | Private AI Infrastructure & Automation",
+    description: "Deploy private AI on your company data. Secure private LLMs, RAG, GPU clusters, GitOps, and observability — inside your own environment.",
     type: "website",
     url: "https://kaironovas.com",
     images: [
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
         url: "/logo.png",
         width: 1200,
         height: 630,
-        alt: "Kaironovas - AI-Powered Solutions"
+        alt: "Kaironovas - Private AI Infrastructure & Automation"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kaironovas | AI-Powered Solutions & Innovation",
-    description: "Transform your business with cutting-edge AI technology. From smart websites to intelligent influencer matching, we create solutions that think ahead.",
+    title: "Kaironovas | Private AI Infrastructure & Automation",
+    description: "Deploy private AI on your company data. Secure private LLMs, RAG, GPU clusters, GitOps, and observability — inside your own environment.",
     images: ["/logo.png"]
   },
 };

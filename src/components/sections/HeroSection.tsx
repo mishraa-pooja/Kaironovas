@@ -28,7 +28,7 @@ export function HeroSection() {
           >
             <Brain className="h-4 w-4 text-indigo-600" />
             <span className="text-sm font-medium text-indigo-800">
-              Powered by Advanced AI Technology
+              Private AI Infrastructure &amp; Automation
             </span>
             <Sparkles className="h-4 w-4 text-purple-600" />
           </motion.div>
@@ -41,11 +41,11 @@ export function HeroSection() {
             className="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6"
           >
             <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-              AI-Powered
+              Private AI,
             </span>
             <br />
             <span className="text-gray-900">
-              Digital Solutions
+              Deployed on Your Data
             </span>
           </motion.h1>
 
@@ -56,8 +56,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed"
           >
-            Transform your business with cutting-edge AI technology. From smart websites 
-            to intelligent influencer matching, we create solutions that think ahead.
+            We deploy secure private LLMs and RAG on your company data, run GPU
+            infrastructure with GitOps and observability, and automate workflows —
+            all inside your own environment.
           </motion.p>
 
           {/* Feature highlights */}
@@ -68,9 +69,9 @@ export function HeroSection() {
             className="flex flex-wrap justify-center gap-6 mb-10"
           >
             {[
-              { icon: Zap, text: 'AI Website Creation' },
-              { icon: Brain, text: 'Smart Analytics' },
-              { icon: Sparkles, text: 'Predictive Marketing' }
+              { icon: Brain, text: 'Private LLM Deployment' },
+              { icon: Zap, text: 'RAG on Company Data' },
+              { icon: Sparkles, text: 'Secure AI Workflows' }
             ].map((item, index) => (
               <div key={index} className="flex items-center space-x-2 bg-white/60 rounded-full px-4 py-2 backdrop-blur-sm">
                 <item.icon className="h-5 w-5 text-indigo-600" />
@@ -87,11 +88,11 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Button size="xl" variant="gradient" className="group">
-              Start Your AI Journey
+              Book a Demo
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button size="xl" variant="outline" className="border-2">
-              Watch AI Demo
+              Discuss Private AI
             </Button>
           </motion.div>
 
@@ -103,10 +104,10 @@ export function HeroSection() {
             className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
           >
             {[
-              { number: '500+', label: 'AI Models Deployed' },
-              { number: '98%', label: 'Accuracy Rate' },
-              { number: '10M+', label: 'Data Points Analyzed' },
-              { number: '24/7', label: 'AI Monitoring' }
+              { number: '100%', label: 'Private Deployment' },
+              { number: 'Your VPC', label: 'On-Prem, Cloud or VPC' },
+              { number: 'GitOps', label: 'Automated & Versioned' },
+              { number: '24/7', label: 'Observability' }
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-indigo-600 mb-1">
