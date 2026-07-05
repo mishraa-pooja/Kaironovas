@@ -3,8 +3,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Mail, Phone, MapPin, Send, MessageSquare, Calendar } from 'lucide-react'
+import { Send, Mail } from 'lucide-react'
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -12,14 +11,14 @@ export function ContactSection() {
     email: '',
     company: '',
     service: '',
-    message: ''
+    message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -32,7 +31,7 @@ export function ContactSection() {
       const result = await response.json()
 
       if (response.ok) {
-        alert(result.message || 'Thank you! We\'ll get back to you within 24 hours.')
+        alert(result.message || "Thank you! We'll be in touch shortly.")
         setFormData({ name: '', email: '', company: '', service: '', message: '' })
       } else {
         alert(result.error || 'Something went wrong. Please try again.')
@@ -45,225 +44,157 @@ export function ContactSection() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }))
   }
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email Us',
-      details: 'hello@kaironovas.com',
-      description: 'Send us an email anytime'
-    },
-    {
-      icon: Phone,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri 9AM-6PM EST'
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: 'San Francisco, CA',
-      description: 'Schedule a meeting'
-    }
-  ]
-
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-32 border-t border-white/10">
       <div className="container mx-auto px-6">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gray-900">Let's Build Something</span>
-            <br />
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Amazing Together
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ready to transform your business with AI? Get in touch with our team of experts 
-            and let's discuss how we can help you achieve your goals.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="lg:col-span-1"
           >
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Get In Touch</h3>
-                <p className="text-gray-600 mb-8">
-                  Choose the best way to reach us. We're here to help you succeed.
-                </p>
+            <p className="text-sm font-medium tracking-widest uppercase text-zinc-500 mb-6">
+              Contact
+            </p>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-6 text-balance">
+              Discuss Your Private AI Deployment
+            </h2>
+            <p className="text-lg text-zinc-400 leading-relaxed mb-10">
+              Tell us about your data, use case, and infrastructure. We&apos;ll show
+              you how private AI can run securely inside your environment.
+            </p>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg border border-white/10 flex items-center justify-center flex-shrink-0">
+                <Mail className="h-4 w-4 text-zinc-400" />
               </div>
-
-              {contactInfo.map((info, index) => {
-                const IconComponent = info.icon
-                return (
-                  <Card key={index} className="p-6 border-0 shadow-lg hover:shadow-xl transition-shadow">
-                    <CardContent className="p-0">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center flex-shrink-0">
-                          <IconComponent className="h-6 w-6 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-1">{info.title}</h4>
-                          <p className="text-indigo-600 font-medium mb-1">{info.details}</p>
-                          <p className="text-sm text-gray-600">{info.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )
-              })}
-
-              <Card className="p-6 border-0 shadow-lg bg-gradient-to-r from-indigo-50 to-purple-50">
-                <CardContent className="p-0">
-                  <div className="flex items-center space-x-3 mb-3">
-                    <Calendar className="h-5 w-5 text-indigo-600" />
-                    <h4 className="font-semibold text-gray-900">Schedule a Call</h4>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-4">
-                    Book a free 30-minute consultation to discuss your project.
-                  </p>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Book a Call
-                  </Button>
-                </CardContent>
-              </Card>
+              <div>
+                <p className="text-sm text-zinc-500 mb-1">Email</p>
+                <a
+                  href="mailto:hello@kaironovas.com"
+                  className="text-white hover:text-zinc-300 transition-colors"
+                >
+                  hello@kaironovas.com
+                </a>
+              </div>
             </div>
           </motion.div>
 
-          {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="lg:col-span-2"
           >
-            <Card className="border-0 shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
-                  <MessageSquare className="h-6 w-6 mr-2 text-indigo-600" />
-                  Send Us a Message
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                        placeholder="John Doe"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                        placeholder="john@company.com"
-                      />
-                    </div>
-                  </div>
+            <form
+              onSubmit={handleSubmit}
+              className="p-8 rounded-xl border border-white/10 bg-white/[0.02] space-y-6"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm text-zinc-400 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-black border border-white/10 rounded-lg focus:ring-1 focus:ring-white/30 focus:border-white/20 transition-colors text-white placeholder-zinc-600"
+                    placeholder="Jane Smith"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm text-zinc-400 mb-2">
+                    Work Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-black border border-white/10 rounded-lg focus:ring-1 focus:ring-white/30 focus:border-white/20 transition-colors text-white placeholder-zinc-600"
+                    placeholder="jane@company.com"
+                  />
+                </div>
+              </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                        placeholder="Your Company"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        Service Interest
-                      </label>
-                      <select
-                        name="service"
-                        value={formData.service}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors"
-                      >
-                        <option value="">Select a service</option>
-                        <option value="ai-website">AI Website Creation</option>
-                        <option value="digital-marketing">AI Digital Marketing</option>
-                        <option value="influencer-marketing">Smart Influencer Matching</option>
-                        <option value="sports-analytics">AI Sports Analytics</option>
-                        <option value="home-automation">Smart Home Automation</option>
-                        <option value="custom">Custom AI Solution</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Project Details *
-                    </label>
-                    <textarea
-                      name="message"
-                      required
-                      rows={5}
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-colors resize-none"
-                      placeholder="Tell us about your project, goals, and how we can help..."
-                    />
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="xl"
-                    variant="gradient"
-                    disabled={isSubmitting}
-                    className="w-full group"
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm text-zinc-400 mb-2">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-black border border-white/10 rounded-lg focus:ring-1 focus:ring-white/30 focus:border-white/20 transition-colors text-white placeholder-zinc-600"
+                    placeholder="Your Company"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm text-zinc-400 mb-2">
+                    What do you need?
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-black border border-white/10 rounded-lg focus:ring-1 focus:ring-white/30 focus:border-white/20 transition-colors text-white"
                   >
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                    {!isSubmitting && (
-                      <Send className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                    <option value="">Select an option</option>
+                    <option value="production-ai-pilot">Production AI Pilot</option>
+                    <option value="rag">Production RAG Systems</option>
+                    <option value="private-llm">Private LLM Deployment</option>
+                    <option value="mlops">MLOps & CI/CD</option>
+                    <option value="gpu-k8s">GPU / Kubernetes Infrastructure</option>
+                    <option value="workflow-automation">AI Workflow Automation</option>
+                    <option value="observability">AI Observability</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm text-zinc-400 mb-2">
+                  Tell us about your project *
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  rows={5}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 bg-black border border-white/10 rounded-lg focus:ring-1 focus:ring-white/30 focus:border-white/20 transition-colors text-white placeholder-zinc-600 resize-none"
+                  placeholder="What have you built so far? What's blocking production deployment?"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="xl"
+                disabled={isSubmitting}
+                className="w-full group"
+              >
+                {isSubmitting ? 'Sending...' : 'Book a Private AI Demo'}
+                {!isSubmitting && (
+                  <Send className="ml-2 h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
+                )}
+              </Button>
+            </form>
           </motion.div>
         </div>
       </div>

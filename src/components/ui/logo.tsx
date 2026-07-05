@@ -36,9 +36,9 @@ export function Logo({
   }
 
   const textColorClasses = {
-    light: 'bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent',
-    dark: 'bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent',
-    white: 'bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent'
+    light: 'text-zinc-900',
+    dark: 'text-zinc-900',
+    white: 'text-white',
   }
 
   return (
@@ -60,8 +60,7 @@ export function Logo({
         
         {/* Fallback Icon - Hidden by default, can be shown via CSS or JS */}
         <div className="hidden fallback-icon">
-          <Sparkles className={`${sizeClasses[size]} ${variant === 'white' ? 'text-indigo-400' : 'text-indigo-600'}`} />
-          <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
+          <Sparkles className={`${sizeClasses[size]} ${variant === 'white' ? 'text-white' : 'text-zinc-900'}`} />
         </div>
       </div>
 
@@ -88,14 +87,14 @@ export function TextLogo({
   }
 
   const textColorClasses = {
-    light: 'bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent',
-    dark: 'bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent',
-    white: 'bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent'
+    light: 'text-zinc-900',
+    dark: 'text-zinc-900',
+    white: 'text-white',
   }
 
   return (
     <div className={`flex items-center space-x-2 ${className}`}>
-      <Sparkles className={`h-6 w-6 ${variant === 'white' ? 'text-indigo-400' : 'text-indigo-600'}`} />
+      <Sparkles className={`h-6 w-6 ${variant === 'white' ? 'text-white' : 'text-zinc-900'}`} />
       <span className={`${textSizeClasses[size]} font-bold ${textColorClasses[variant]}`}>
         Kaironovas
       </span>
