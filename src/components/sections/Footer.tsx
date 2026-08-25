@@ -7,16 +7,16 @@ import { Logo } from '@/components/ui/logo'
 
 export function Footer() {
   const services = [
-    { name: 'Private LLM Deployment', href: '#services' },
-    { name: 'RAG on Company Data', href: '#services' },
-    { name: 'GPU Cluster Deployment', href: '#services' },
-    { name: 'GitOps & CI/CD', href: '#services' },
-    { name: 'Observability', href: '#services' }
+    { name: 'Private AI Assistants', href: '#solutions' },
+    { name: 'RAG & Knowledge Search', href: '#solutions' },
+    { name: 'LLM Deployment & Automation', href: '#solutions' },
+    { name: 'Use Cases', href: '#use-cases' },
+    { name: 'Process', href: '#process' }
   ]
 
   const company = [
-    { name: 'About', href: '#about' },
-    { name: 'What We Build', href: '#services' },
+    { name: 'Why Kaironovas', href: '#why' },
+    { name: 'Solutions', href: '#solutions' },
     { name: 'Contact', href: '#contact' },
     { name: 'Privacy Policy', href: '#' },
     { name: 'Terms of Service', href: '#' }

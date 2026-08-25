@@ -5,52 +5,57 @@ import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { LogoIcon } from '@/components/ui/logo-icon'
+import { ThemeToggle } from '@/components/ui/theme-toggle'
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'What We Build', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Demos', href: '#ai-solutions' },
+    { name: 'Solutions', href: '#solutions' },
+    { name: 'Why Kaironovas', href: '#why' },
+    { name: 'Use Cases', href: '#use-cases' },
+    { name: 'Process', href: '#process' },
     { name: 'Contact', href: '#contact' },
   ]
 
   return (
-    <header className="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-200 z-50">
+    <header className="fixed top-0 w-full bg-white/90 dark:bg-[#080a12]/90 backdrop-blur-md border-b border-gray-200 dark:border-white/10 z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <LogoIcon size={32} />
-            <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-violet-400 bg-clip-text text-transparent">
               Kaironovas
             </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-7">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+                className="text-sm text-gray-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors font-medium"
               >
                 {item.name}
               </Link>
             ))}
+            <ThemeToggle />
             <Button variant="gradient" size="lg" asChild>
-              <Link href="#contact">Book a Demo</Link>
+              <Link href="#contact">Book a Strategy Call</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-700 dark:text-slate-200"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -63,13 +68,13 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4">
+          <div className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-indigo-600 transition-colors font-medium"
+                  className="text-gray-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-300 transition-colors font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -77,7 +82,7 @@ export function Header() {
               ))}
               <Button variant="gradient" size="lg" asChild className="self-start">
                 <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
-                  Book a Demo
+                  Book a Strategy Call
                 </Link>
               </Button>
             </div>

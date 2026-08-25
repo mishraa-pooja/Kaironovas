@@ -3,128 +3,105 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '@/components/ui/card'
-import { Quote } from 'lucide-react'
+import {
+  Headset,
+  FileSearch,
+  Users,
+  AlertTriangle,
+  FileSignature,
+  Workflow,
+} from 'lucide-react'
 
 const useCases = [
   {
-    title: 'Internal Knowledge Assistant',
-    category: 'Knowledge Access',
-    content: 'Employees get instant, cited answers from company documents, wikis, and SOPs — without hunting through folders.',
-    avatar: '🧠'
+    icon: Headset,
+    title: 'Customer support knowledge assistant',
+    description:
+      'Answer customer and agent questions instantly from your support docs and past tickets.',
   },
   {
-    title: 'Support Automation',
-    category: 'Customer Support',
-    content: 'Automate repetitive support tickets with AI grounded in your knowledge base, with human review before responses go out.',
-    avatar: '🎧'
+    icon: FileSearch,
+    title: 'Internal document search',
+    description:
+      'Find answers across wikis, PDFs, and drives with cited sources — no more folder hunting.',
   },
   {
-    title: 'Document Processing',
-    category: 'Insurance & Finance',
-    content: 'Extract, summarize, and flag key terms across contracts, claims, and forms — processed entirely within your environment.',
-    avatar: '📄'
+    icon: Users,
+    title: 'HR and policy assistant',
+    description:
+      'Give employees accurate answers on policies, benefits, and processes from approved sources.',
   },
   {
-    title: 'Compliance Assistant',
-    category: 'Regulated Industries',
-    content: 'Answer policy and compliance questions strictly from approved internal sources, with traceable citations.',
-    avatar: '🛡️'
+    icon: AlertTriangle,
+    title: 'DevOps / incident assistant',
+    description:
+      'Surface runbooks, past incidents, and fixes to help teams resolve issues faster.',
   },
   {
-    title: 'IT & HR Helpdesk',
-    category: 'Operations',
-    content: 'Resolve common IT and HR requests automatically, reducing manual work and routing edge cases to a human.',
-    avatar: '💬'
+    icon: FileSignature,
+    title: 'Sales and proposal assistant',
+    description:
+      'Draft proposals and answer product questions grounded in your latest sales content.',
   },
   {
-    title: 'Engineering Knowledge Search',
-    category: 'Manufacturing & Tech',
-    content: 'Search manuals, runbooks, and maintenance logs across teams to get answers on the floor in seconds.',
-    avatar: '🔍'
-  }
+    icon: Workflow,
+    title: 'Operations workflow automation',
+    description:
+      'Automate repetitive back-office tasks with AI agents connected to your tools.',
+  },
 ]
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-indigo-50 to-purple-50">
+    <section id="use-cases" className="py-24 bg-white dark:bg-[#080a12]">
       <div className="container mx-auto px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="max-w-3xl mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gray-900">Where Private AI</span>
-            <br />
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-              Delivers Value
-            </span>
+          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600 dark:text-indigo-400 mb-4">
+            Use Cases
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-slate-900 dark:text-white leading-tight mb-5">
+            Where companies can use private AI
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Common ways teams put private AI to work — grounded in their own data,
-            deployed securely inside their infrastructure.
+          <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+            Real workflows teams put private AI to work on — grounded in their own
+            data and deployed securely inside their infrastructure.
           </p>
         </motion.div>
 
-        {/* Use Cases Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {useCases.map((useCase, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 group border-0 shadow-lg">
-                <CardContent className="p-6">
-                  {/* Quote Icon */}
-                  <Quote className="h-8 w-8 text-indigo-200 mb-4" />
-
-                  {/* Content */}
-                  <p className="text-gray-700 mb-6 leading-relaxed">
-                    {useCase.content}
-                  </p>
-
-                  {/* Label */}
-                  <div className="flex items-center space-x-3">
-                    <div className="text-2xl">{useCase.avatar}</div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{useCase.title}</div>
-                      <div className="text-sm text-indigo-600 font-medium">{useCase.category}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {useCases.map((useCase, index) => {
+            const Icon = useCase.icon
+            return (
+              <motion.div
+                key={useCase.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/[0.04] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-indigo-200 dark:hover:border-indigo-400/40 dark:hover:bg-white/[0.06] group">
+                  <CardContent className="p-7">
+                    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-500/15 dark:text-indigo-300 transition-transform group-hover:scale-105">
+                      <Icon className="h-5 w-5" />
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2.5">
+                      {useCase.title}
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {useCase.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            )
+          })}
         </div>
-
-        {/* Highlights */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
-        >
-          {[
-            { number: 'Private', label: 'Runs in your environment' },
-            { number: 'Cited', label: 'Answers with sources' },
-            { number: 'Secure', label: 'Access-controlled' },
-            { number: '24/7', label: 'Observability' }
-          ].map((stat, index) => (
-            <div key={index} className="space-y-2">
-              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                {stat.number}
-              </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   )

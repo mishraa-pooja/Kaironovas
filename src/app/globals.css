@@ -27,13 +27,15 @@
 
 
 
-* {
-  border-color: hsl(var(--border));
+body {
+  background-color: #ffffff;
+  color: #0f172a;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+.dark body {
+  background-color: #080a12;
+  color: #e2e8f0;
 }
 
 /* Custom scrollbar */
@@ -43,6 +45,10 @@ body {
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #0b0d16;
 }
 
 ::-webkit-scrollbar-thumb {
