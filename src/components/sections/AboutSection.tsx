@@ -83,9 +83,10 @@ export function AboutSection() {
             Built by engineers who understand deployment, not just demos
           </h2>
           <p className="text-lg text-slate-300 leading-relaxed">
-            Most vendors can show a chatbot. Few can run AI reliably inside real
-            enterprise environments. We combine AI engineering with infrastructure
-            automation to take systems from prototype to production.
+            Many AI vendors can build a chatbot demo. Kaironovas focuses on the
+            infrastructure, deployment, data integration, automation, and
+            observability required to run AI reliably inside production
+            environments.
           </p>
         </motion.div>
 

@@ -2,30 +2,24 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Mail, Cloud, ShieldCheck, Twitter, Linkedin, Github } from 'lucide-react'
+import { Mail, Cloud, ShieldCheck } from 'lucide-react'
 import { Logo } from '@/components/ui/logo'
 
 export function Footer() {
   const services = [
-    { name: 'Private AI Assistants', href: '#solutions' },
-    { name: 'RAG & Knowledge Search', href: '#solutions' },
-    { name: 'LLM Deployment & Automation', href: '#solutions' },
-    { name: 'Use Cases', href: '#use-cases' },
-    { name: 'Process', href: '#process' }
+    { name: 'Private AI Assistants', href: '/#solutions' },
+    { name: 'RAG & Knowledge Search', href: '/#solutions' },
+    { name: 'LLM Deployment & Automation', href: '/#solutions' },
+    { name: 'Use Cases', href: '/#use-cases' },
+    { name: 'How We Work', href: '/#process' }
   ]
 
   const company = [
-    { name: 'Why Kaironovas', href: '#why' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Contact', href: '#contact' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms of Service', href: '#' }
-  ]
-
-  const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: '#' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#' },
-    { name: 'GitHub', icon: Github, href: '#' }
+    { name: 'About', href: '/about' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Contact', href: '/#contact' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' }
   ]
 
   return (
@@ -40,21 +34,7 @@ export function Footer() {
             <p className="text-gray-400 mb-6 leading-relaxed">
               Private AI infrastructure and automation — secure private LLMs, RAG, and workflow automation deployed inside your own environment.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => {
-                const IconComponent = social.icon
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="w-10 h-10 rounded-full bg-gray-800 hover:bg-indigo-600 flex items-center justify-center transition-colors"
-                    aria-label={social.name}
-                  >
-                    <IconComponent className="h-5 w-5" />
-                  </a>
-                )
-              })}
-            </div>
+            {/* TODO: Add real LinkedIn / GitHub URLs, then reintroduce social links here. */}
           </div>
 
           {/* Services */}

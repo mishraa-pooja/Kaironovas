@@ -11,12 +11,11 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Why Kaironovas', href: '#why' },
-    { name: 'Use Cases', href: '#use-cases' },
-    { name: 'Process', href: '#process' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Solutions', href: '/#solutions' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'How We Work', href: '/#process' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/#contact' },
   ]
 
   return (
@@ -44,7 +43,7 @@ export function Header() {
             ))}
             <ThemeToggle />
             <Button variant="gradient" size="lg" asChild>
-              <Link href="#contact">Book a Strategy Call</Link>
+              <Link href="/#contact">Get Infrastructure Review</Link>
             </Button>
           </div>
 
@@ -81,8 +80,8 @@ export function Header() {
                 </Link>
               ))}
               <Button variant="gradient" size="lg" asChild className="self-start">
-                <Link href="#contact" onClick={() => setIsMenuOpen(false)}>
-                  Book a Strategy Call
+                <Link href="/#contact" onClick={() => setIsMenuOpen(false)}>
+                  Get Infrastructure Review
                 </Link>
               </Button>
             </div>

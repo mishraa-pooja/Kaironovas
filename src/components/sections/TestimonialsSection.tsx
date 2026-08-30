@@ -17,37 +17,37 @@ const useCases = [
     icon: Headset,
     title: 'Customer support knowledge assistant',
     description:
-      'Answer customer and agent questions instantly from your support docs and past tickets.',
+      'Help support teams find grounded answers across documentation and historical tickets without manually searching multiple systems.',
   },
   {
     icon: FileSearch,
     title: 'Internal document search',
     description:
-      'Find answers across wikis, PDFs, and drives with cited sources — no more folder hunting.',
+      'Find trusted answers across wikis, PDFs, drives, and internal documentation with cited sources.',
   },
   {
     icon: Users,
     title: 'HR and policy assistant',
     description:
-      'Give employees accurate answers on policies, benefits, and processes from approved sources.',
+      'Give employees grounded answers on policies, benefits, and internal processes using approved company sources.',
   },
   {
     icon: AlertTriangle,
     title: 'DevOps / incident assistant',
     description:
-      'Surface runbooks, past incidents, and fixes to help teams resolve issues faster.',
+      'Surface runbooks, past incidents, infrastructure documentation, and troubleshooting steps to help engineering teams investigate issues faster.',
   },
   {
     icon: FileSignature,
     title: 'Sales and proposal assistant',
     description:
-      'Draft proposals and answer product questions grounded in your latest sales content.',
+      'Help sales teams find product information and draft proposals using approved internal knowledge.',
   },
   {
     icon: Workflow,
     title: 'Operations workflow automation',
     description:
-      'Automate repetitive back-office tasks with AI agents connected to your tools.',
+      'Connect AI to business tools and automate repetitive operational workflows with controlled actions.',
   },
 ]
 

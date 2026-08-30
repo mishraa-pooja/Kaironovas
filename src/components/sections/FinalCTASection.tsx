@@ -24,20 +24,30 @@ export function FinalCTASection() {
             Ready to build AI your company can actually use?
           </h2>
           <p className="mx-auto max-w-xl text-lg text-slate-300 leading-relaxed mb-9">
-            Let’s identify one high-impact workflow and turn it into a private AI
-            system.
+            Let’s identify where private AI can create real value in your
+            organization and what it would take to deploy it securely.
           </p>
-          <Button
-            size="xl"
-            variant="gradient"
-            className="group shadow-lg shadow-indigo-600/30"
-            asChild
-          >
-            <Link href="#contact">
-              Book a Strategy Call
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button
+              size="xl"
+              variant="gradient"
+              className="group shadow-lg shadow-indigo-600/30"
+              asChild
+            >
+              <Link href="#contact">
+                Get an AI Infrastructure Review
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button
+              size="xl"
+              variant="outline"
+              className="border-2 border-white/15 bg-transparent text-slate-200 hover:border-indigo-400/40 hover:bg-white/5"
+              asChild
+            >
+              <Link href="#contact">Talk to an Engineer</Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
     </section>

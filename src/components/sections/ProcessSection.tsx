@@ -47,7 +47,7 @@ export function ProcessSection() {
             Process
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
-            From messy data to working AI system
+            From company data to production AI
           </h2>
         </motion.div>
 

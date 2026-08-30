@@ -10,8 +10,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://kaironovas.com'),
-  title: "Kaironovas | Private AI Infrastructure & Automation",
-  description: "Kaironovas deploys private AI on your company data — secure private LLMs, RAG, GPU clusters, GitOps, observability, and workflow automation, all inside your own environment.",
+  title: "Kaironovas | Private AI Infrastructure, RAG & LLM Deployment",
+  description: "Kaironovas builds and deploys private AI assistants, RAG systems, LLM infrastructure, and AI automation inside your cloud, VPC, or on-prem environment.",
   keywords: "Private AI, private LLM deployment, RAG on company data, enterprise AI infrastructure, GPU cluster deployment, secure AI workflows, AI workflow automation, GitOps, AI observability, on-premise AI",
   authors: [{ name: "Kaironovas" }],
   icons: {
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: "Kaironovas | Private AI Infrastructure & Automation",
-    description: "Deploy private AI on your company data. Secure private LLMs, RAG, GPU clusters, GitOps, and observability — inside your own environment.",
+    title: "Kaironovas | Private AI Infrastructure, RAG & LLM Deployment",
+    description: "Kaironovas builds and deploys private AI assistants, RAG systems, LLM infrastructure, and AI automation inside your cloud, VPC, or on-prem environment.",
     type: "website",
     url: "https://kaironovas.com",
     images: [
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kaironovas | Private AI Infrastructure & Automation",
-    description: "Deploy private AI on your company data. Secure private LLMs, RAG, GPU clusters, GitOps, and observability — inside your own environment.",
+    title: "Kaironovas | Private AI Infrastructure, RAG & LLM Deployment",
+    description: "Kaironovas builds and deploys private AI assistants, RAG systems, LLM infrastructure, and AI automation inside your cloud, VPC, or on-prem environment.",
     images: ["/logo.png"]
   },
 };

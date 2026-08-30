@@ -13,21 +13,21 @@ const problems = [
   },
   {
     icon: Lock,
-    title: 'Public AI tools can’t safely access it',
+    title: 'Sensitive data requires more control',
     description:
-      'Sending sensitive company data to third-party APIs is a non-starter for most security, legal, and compliance teams.',
+      'Security, privacy, and compliance requirements can limit where sensitive company data and AI workloads can run.',
   },
   {
     icon: MessageSquareOff,
-    title: 'Generic chatbots don’t solve real work',
+    title: 'Generic chatbots don’t solve real workflows',
     description:
-      'A chat window with no access to your data or systems won’t resolve tickets, answer policy questions, or automate workflows.',
+      'AI becomes useful when it can retrieve trusted company information, connect to existing systems, and support real business workflows.',
   },
   {
     icon: ServerCog,
-    title: 'You need deployed, observable systems',
+    title: 'Production AI needs real infrastructure',
     description:
-      'Real value comes from private AI that’s deployed on your infrastructure, connected to your data, and monitored in production.',
+      'Reliable AI systems need deployment automation, authentication, monitoring, scaling, logging, and production-grade infrastructure.',
   },
 ]
 
@@ -46,7 +46,7 @@ export function ProblemSection() {
             The Problem
           </p>
           <h2 className="text-3xl md:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-slate-900 dark:text-white leading-tight">
-            Most AI tools are not built for private company data
+            Production AI gets harder when private company data is involved
           </h2>
         </motion.div>
 
